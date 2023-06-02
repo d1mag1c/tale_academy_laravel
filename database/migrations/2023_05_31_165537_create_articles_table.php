@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('image', 220)->nullable(true);
             $table->string('description', 500)->nullable(true);
             $table->text('text')->nullable(false);
-            $table->datetime('publication_date')->index();
+            $table->datetime('publication_date')->index()->nullable(true);
         });
     }
 
