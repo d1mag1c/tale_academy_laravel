@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+
   public function index() {
-      return dd(Articles::all());
+
+      return 'В блоге ' .Articles::count(). ' статей, ' .Articles::where('image', null)->count(). ' из них без обложек';
   }
 }
