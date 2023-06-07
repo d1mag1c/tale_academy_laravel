@@ -1,0 +1,60 @@
+.main {
+    flex-grow: 1;
+    display: flex;
+
+    flex-direction: column;
+    padding: 150px 50px 50px;
+
+    & .post {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid gray;
+        padding: 40px 40px 20px;
+        margin-bottom: 50px;
+
+        .post__img {
+            display: flex;
+            margin: 0 auto;
+            max-width: 1200px;
+            max-height: 700px;
+
+            img {
+
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+
+        }
+
+        & .post__content {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+
+            & h2 {
+                margin: 10px;
+            }
+        }
+
+        & .post__content__date {
+            margin-left: auto;
+
+            & ul {
+                display: flex;
+
+                padding: 20px 10px 0 20px;
+
+                & li {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+
+    }
+
+}
+
+

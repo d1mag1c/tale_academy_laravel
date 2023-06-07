@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    background: #471477;
+    z-index: 10;
+
+    & .header__nav {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 20px;
+
+        & a {
+            color: white;
+            font-size: 30px;
+            margin-left: 20px;
+            &:hover {
+                color: yellow;
+            }
+        }
+    }
+
+
+}

@@ -16,11 +16,14 @@ class ArticleFactory extends Factory
      */
     public function definition(): array
     {
+        $rand = rand(0,1);
+
         return [
             'title' => fake()->text(20),
             'slug' => fake()->text(30),
-            'text' => fake()->text(100),
-            'image' => fake()->imageUrl
+            'text' => fake()->paragraph(20),
+            'image' => $rand ? fake()->imageUrl : null,
+            'publication_date' => fake()->dateTime
         ];
     }
 }
