@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blog', [\App\Http\Controllers\ArticleController::class, 'index']);
+Route::get('/blog', [\App\Http\Controllers\PostController::class, 'index'])->name('blog.index');
