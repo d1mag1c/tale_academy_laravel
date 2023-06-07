@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/blog', [\App\Http\Controllers\PostController::class, 'index'])->name('blog.index');
+Route::get('/blog/{slug}', [\App\Http\Controllers\PostController::class, 'show'])->name('blog.show');

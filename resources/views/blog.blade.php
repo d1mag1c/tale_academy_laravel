@@ -2,9 +2,9 @@
 @section('blog')
 
     @foreach($articles as $post)
-        <div class="post">
+        <div class="post" id="{{$post->id}}">
             <div class="post__img">
-                <a href="">
+                <a href="{{route('blog.show', $post->slug)}}">
                     <img src=
                              @if(isset($post->image))
                                      {{$post->image}}
@@ -15,7 +15,7 @@
                 </a>
             </div>
             <div class="post__content">
-                <h2><a href="">{{$post->title}}</a></h2>
+                <h2><a href="{{route('blog.show', $post->slug)}}">{{$post->title}}</a></h2>
                 <p>{{$post->text}}</p>
             </div>
             <div class="post__content__date">
