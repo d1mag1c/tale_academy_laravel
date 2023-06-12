@@ -13,28 +13,12 @@ class ArticleSeeder extends Seeder
      */
     public function run(): void
     {
-//        if (Article::count() == 0) {
 
+        if (Article::count() == 0) {
 
-
-            \App\Models\Article::factory(10)->create()->make();
-
-
-//            for ($i = 1; $i <= 10; $i++) {
-//
-//                $rand = rand(0, 1);
-//                $randImage = $rand ? fake()->imageUrl : null;
-//
-//                Article::create([
-//                    'title' => "Article $i",
-//                    'slug' => fake()->text(20),
-//                    'text' => fake()->text(100),
-//                    'image' => $randImage
-//
-//                ]);
-//
-//            }
+            \App\Models\Article::factory(20)->create()->make();
 
         }
-//    }
+
+    }
 }
