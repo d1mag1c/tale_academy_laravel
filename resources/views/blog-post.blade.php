@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('blog_post')
+@section('content')
 
     <div class="post">
         <div class="post__img">

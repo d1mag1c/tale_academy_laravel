@@ -20,7 +20,6 @@ class ArticleFactory extends Factory
 
         return [
             'title' => fake()->text(20),
-            'slug' => fake()->text(30),
             'text' => fake()->paragraph(20),
             'image' => $rand ? fake()->imageUrl : null,
             'publication_date' => fake()->dateTime

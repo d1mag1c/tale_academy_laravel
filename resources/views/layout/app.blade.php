@@ -18,8 +18,7 @@
 
     </section>
     <section class="main">
-        @yield('blog')
-        @yield('blog_post')
+        @yield('content')
     </section>
     <section class="footer">
         <p>&copy; All rights reversed. Дмитрий Зайцев. &#9786;</p>

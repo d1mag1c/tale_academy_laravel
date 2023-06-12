@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('blog')
+@section('content')
 
     @foreach($articles as $post)
         <div class="post" id="{{$post->id}}">
