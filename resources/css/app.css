@@ -101,3 +101,28 @@ li {
   height: 80px;
   border-top: 1px solid black;
 }
+
+.article-comments {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 50px;
+}
+.article-comments .comment {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.article-comments .comment .comment__user {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 20px 20px;
+}
+.article-comments .comment .comment__user .comment__user_name {
+  font-weight: bold;
+}

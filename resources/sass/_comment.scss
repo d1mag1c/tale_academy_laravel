@@ -1,0 +1,33 @@
+.article-comments {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 50px;
+
+    .comment {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        width: 100%;
+
+        .comment__user {
+
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 20px 20px;
+
+
+            .comment__user_name {
+                font-weight: bold;
+
+            }
+
+        }
+
+    }
+
+}
