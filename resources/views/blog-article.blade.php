@@ -1,14 +1,14 @@
-@extends('layout.app')
+@extends('layout.main')
 @section('content')
 
     <div class="post">
         <div class="post__img">
 
             <img src=
-                     @if(isset($article->image))
-                             {{$article->image}}
-                             @else
-                             '../img/blog-1.jpg'
+                         @if(isset($article->image))
+                                 {{$article->image}}
+                                 @else
+                                 '../img/blog-1.jpg'
                  @endif
                  alt="">
 

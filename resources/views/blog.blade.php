@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.main')
 @section('content')
 
     @foreach($articles as $post)
@@ -6,10 +6,10 @@
             <div class="post__img">
                 <a href="{{route('blog.show', $post->slug)}}">
                     <img src=
-                             @if(isset($post->image))
-                                     {{$post->image}}
-                                     @else
-                                     'img/blog-1.jpg'
+                                 @if(isset($post->image))
+                                         {{$post->image}}
+                                         @else
+                                         'img/blog-1.jpg'
                          @endif
                          alt="">
                 </a>

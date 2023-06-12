@@ -21,3 +21,7 @@ Route::get('/blog', [\App\Http\Controllers\ArticleController::class, 'index'])->
 Route::get('/blog/{slug}', [\App\Http\Controllers\ArticleController::class, 'show'])->name('blog.show');
 Route::get('/categories', [\App\Http\Controllers\CategoryController::class, 'index'])->name('category.index');
 Route::get('/products', [\App\Http\Controllers\ProductController::class, 'index'])->name('product.index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
