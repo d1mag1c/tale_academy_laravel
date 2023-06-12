@@ -13,7 +13,9 @@
     <section class="header">
         <div class="header__nav">
             <a href="/">Главная</a>
-            <a href="{{route('blog.index')}}">Blog</a>
+            <a href="{{route('blog.index')}}">Блог</a>
+            <a href="{{route('category.index')}}">Категории</a>
+            <a href="{{route('product.index')}}">Товары</a>
         </div>
 
     </section>
