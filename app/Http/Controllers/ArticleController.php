@@ -20,6 +20,10 @@ class ArticleController extends Controller
 
         $article =  Article::where('slug', $slug)->first();
 
+        if (!$article) {
+            abort(404);
+        }
+
         return view('blog-article', compact('article'));
     }
 

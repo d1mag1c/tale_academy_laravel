@@ -18,8 +18,11 @@ class ProductController extends Controller
 
     public function show($slug)
     {
-        $product =  Product::where('slug', $slug)->first();
+        $product = Product::where('slug', $slug)->first();
 
+        if (!$product) {
+            abort(404);
+        }
 
         return view('products-selected-card', compact('product'));
     }
