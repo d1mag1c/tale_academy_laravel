@@ -20,7 +20,6 @@ Route::get('/', function () {
 
 Route::get('/blog', [\App\Http\Controllers\ArticleController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [\App\Http\Controllers\ArticleController::class, 'show'])->name('blog.show');
-Route::get('/categories', [\App\Http\Controllers\CategoryController::class, 'index'])->name('category.index');
 Route::get('/products', [\App\Http\Controllers\ProductController::class, 'index'])->name('product.index');
 
 Auth::routes();
@@ -31,3 +30,5 @@ Route::get('logout', function(){
     Auth::logout();
     return redirect('/login');
 });
+
+Route::get('/products/{slug}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product.show');

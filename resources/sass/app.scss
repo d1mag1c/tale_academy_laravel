@@ -4,5 +4,9 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
+@import "base";
+@import "header";
+@import "blog";
+@import "footer";
+@import "comment";
+@import "products";
