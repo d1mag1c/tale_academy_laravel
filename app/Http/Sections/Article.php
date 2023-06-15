@@ -58,8 +58,9 @@ class Article extends Section implements Initializable
     {
         $columns = [
             AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
-            AdminColumn::link('title', 'Заголовок', 'created_at'),
-            AdminColumn::link('image', 'Картинка', 'created_at')
+            AdminColumn::link('title', 'Заголовок'),
+            AdminColumn::link('slug', 'Slug'),
+            AdminColumn::image('image', 'Картинка')
                 ->setSearchCallback(function($column, $query, $search){
                     return $query
                         ->orWhere('title', 'like', '%'.$search.'%')
@@ -70,14 +71,7 @@ class Article extends Section implements Initializable
                     $query->orderBy('created_at', $direction);
                 })
             ,
-            AdminColumn::boolean('name', 'On'),
-            AdminColumn::text('created_at', 'Created / updated', 'updated_at')
-                ->setWidth('160px')
-                ->setOrderable(function($query, $direction) {
-                    $query->orderBy('updated_at', $direction);
-                })
-                ->setSearchable(false)
-            ,
+
         ];
 
         $display = AdminDisplay::datatables()
@@ -115,19 +109,17 @@ class Article extends Section implements Initializable
     {
         $form = AdminForm::card()->addBody([
             AdminFormElement::columns()->addColumn([
-                AdminFormElement::text('name', 'Name')
+                AdminFormElement::text('id', 'ID')->setReadonly(true),
+                AdminFormElement::text('title', 'Заголовок')
                     ->required()
                 ,
                 AdminFormElement::html('<hr>'),
-                AdminFormElement::datetime('created_at')
-                    ->setVisible(true)
-                    ->setReadonly(false)
-                ,
-                AdminFormElement::html('last AdminFormElement without comma')
+                AdminFormElement::datetime('publication_date', 'Дата публикации')
             ], 'col-xs-12 col-sm-6 col-md-4 col-lg-4')->addColumn([
-                AdminFormElement::text('id', 'ID')->setReadonly(true),
-                AdminFormElement::html('last AdminFormElement without comma')
-            ], 'col-xs-12 col-sm-6 col-md-8 col-lg-8'),
+                AdminFormElement::image('image', 'Картинка')
+            ], 'col-xs-12 col-sm-6 col-md-8 col-lg-8')->addColumn([
+                AdminFormElement::wysiwyg('text', 'Содержимое'),
+            ], 'col-lg-12'),
         ]);
 
         $form->getButtons()->setButtons([
