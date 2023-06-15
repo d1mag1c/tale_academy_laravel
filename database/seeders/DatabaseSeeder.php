@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder
         $this->call(ProductSeeder::class);
         // \App\Models\User::factory(10)->create();
 
-         \App\Models\User::factory()->create([
-             'name' => 'Test User',
-             'email' => 'test@example.com',
-             'password' => Hash::make('demo')
-         ]);
+//         \App\Models\User::factory()->create([
+//             'name' => 'Test User',
+//             'email' => 'test@example.com',
+//             'password' => Hash::make('demo')
+//         ]);
     }
 }

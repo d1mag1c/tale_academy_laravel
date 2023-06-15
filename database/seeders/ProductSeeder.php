@@ -17,6 +17,17 @@ class ProductSeeder extends Seeder
         if (Product::count() == 0) {
 
             Product::factory()->count(20)->create();
+
+            $products = Product::all();
+            $categoriesIds = Category::all()->pluck('id')->toArray();
+
+            foreach ($products as $product) {
+
+                shuffle($categoriesIds);
+                $ids = array_slice($categoriesIds, 0, rand(1, count($categoriesIds)));
+                $product->categories()->sync($ids);
+
+            }
         }
 
     }

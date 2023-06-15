@@ -17,11 +17,9 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
-        $rand = rand(1, Category::all()->count());
 
         return [
             'name' => fake()->word(),
-            'category_id' => $rand,
             'price' => fake()->randomFloat(2, 1, 100),
             'image' => fake()->imageUrl(360, 360, 'products'),
 
