@@ -60,10 +60,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 20px 0;
+            margin: 10px 0;
             padding: 10px;
             border: 1px solid black;
             border-radius: 5px;
+        }
+        .products-categories__title {
+            font-weight: bold;
+            margin-bottom: 20px;
         }
     }
 

@@ -5,6 +5,7 @@
     <section class="products">
 
         <div class="products-categories">
+            <p class="products-categories__title">Категории:</p>
             @foreach($categories as $category)
 
                 <a href="">
