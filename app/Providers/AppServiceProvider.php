@@ -17,8 +17,17 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
+    protected $widgets = [
+        \App\Widgets\AddButton::class,
+
+    ];
+
     public function boot(): void
     {
-        //
+        $widgetsRegistry = $this->app[\SleepingOwl\Admin\Contracts\Widgets\WidgetsRegistryInterface::class];
+
+        foreach ($this->widgets as $widget) {
+            $widgetsRegistry->registerWidget($widget);
+        }
     }
 }
