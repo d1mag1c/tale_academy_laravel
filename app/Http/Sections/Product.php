@@ -69,12 +69,17 @@ class Product extends Section implements Initializable
             AdminColumn::link('slug', 'Slug')->setHtmlAttribute('class', 'text-center'),
             AdminColumn::image('image', 'Картинка')->setHtmlAttribute('class', 'text-center'),
             AdminColumn::text('price', 'Цена')->setHtmlAttribute('class', 'text-center'),
+            AdminColumn::lists('categories.name', 'Категории')
+                ->append(AdminColumn::filter('category_id'))
+                ->setHtmlAttribute('class', 'text-center'),
+
 
         ];
 
         $display = AdminDisplay::datatables()
             ->setName('firstdatatables')
             ->setOrder([[0, 'asc']])
+            ->with('categories')
             ->setDisplaySearch(true)
             ->paginate(25)
             ->setColumns($columns)
@@ -83,15 +88,16 @@ class Product extends Section implements Initializable
 
         $display->setColumnFilters([
             AdminColumnFilter::select()
-                ->setModelForOptions(\App\Models\Product::class, 'name')
+                ->setModelForOptions(\App\Models\Category::class, 'id')
                 ->setLoadOptionsQueryPreparer(function($element, $query) {
                     return $query;
                 })
                 ->setDisplay('name')
-                ->setColumnName('name')
-                ->setPlaceholder('All names')
+                ->setColumnName('categories.id')
+                ->setPlaceholder('Выбрать категорию')
             ,
         ]);
+
         $display->getColumnFilters()->setPlacement('card.heading');
 
         return $display;
